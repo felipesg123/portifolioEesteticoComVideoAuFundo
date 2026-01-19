@@ -1,0 +1,105 @@
+/* =========================
+   CONTACT PAGE
+   ========================= */
+
+.contact {
+  min-height: 100vh;
+  padding-top: 140px; /* compensa header fixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  max-width: 900px;
+  width: 100%;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+/* Texto */
+.contact-intro h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.contact-intro p {
+  color: #cfcfd6;
+  line-height: 1.6;
+}
+
+/* Formulário */
+.contact-form {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+/* Campo */
+.field {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+/* Label flutuante */
+.field label {
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  color: #9fa0aa;
+  font-size: 0.85rem;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.field input:focus + label,
+.field input:valid + label,
+.field textarea:focus + label,
+.field textarea:valid + label {
+  top: -12px;
+  font-size: 0.7rem;
+  color: #4da3ff;
+}
+
+/* Botão */
+.contact-form button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  background: linear-gradient(90deg, #2b7cff, #5aa2ff);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(77,163,255,0.35);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}

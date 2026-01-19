@@ -1,303 +1,104 @@
-/* =========================
+/* ==================================================
    VARIÁVEIS GLOBAIS
-========================= */
+================================================== */
 :root {
-    --bg-main: #0b0d10;
-    --bg-soft: #12141a;
+  --bg-main: #0b0d10;
+  --bg-soft: #12141a;
 
-    --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.08);
 
-    --text-main: #f2f2f2;
-    --text-muted: #b5b5b5;
+  --text-main: #f2f2f2;
+  --text-muted: #b5b5b5;
 
-    --accent: #635bff; /* Stripe vibe */
+  --accent: #635bff; /* Stripe vibe */
 }
 
-/* =========================
-   RESET BÁSICO
-========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* =========================
-   BODY
-========================= */
-body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: var(--bg-main);
-    color: var(--text-main);
-}
-
-/* =========================
-   VÍDEO DE FUNDO
-========================= */
-.video-bg {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -2;
-}
-
-/* Overlay para dar clima premium */
-.video-bg::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(11,13,16,0.4),
-        rgba(11,13,16,0.85)
-    );
-    z-index: -1;
-}
-
-/* =========================
-   HEADER (GLASSMORPHISM)
-========================= */
-.glass-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 72px;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.08),
-        rgba(255,255,255,0.02)
-    );
-
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    z-index: 10;
-}
-
-/* Container do header */
-.header-container {
-    max-width: 1200px;
-    height: 100%;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 24px;
-}
-
-/* Logo */
-.logo img {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* =========================
-   MENU
-========================= */
-.menu a {
-    color: var(--text-main);
-    text-decoration: none;
-
-    margin-left: 24px;
-    font-size: 0.9rem;
-    font-weight: 500;
-
-    opacity: 0.85;
-    transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-.menu a:hover {
-    opacity: 1;
-    color: var(--accent);
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-.hero {
-    min-height: 100vh;
-
-    padding-top: 140px;
-    padding-left: 24px;
-    padding-right: 24px;
-
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Título principal */
-.hero h1 {
-    font-size: clamp(2.6rem, 6vw, 4rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-}
-
-/* Texto de apoio */
-.hero p {
-    margin-top: 24px;
-    max-width: 600px;
-
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-}
-
-/* =========================
-   SCROLLBAR - WEBKIT
-========================= */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
-}
-
-/* =========================
-   SCROLLBAR - FIREFOX
-========================= */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.25) transparent;
-}
-/* =========================
-   RESET + BASE
-   ========================= */
-
+/* ==================================================
+   RESET GLOBAL (UM SÓ, SEM DUPLICAR)
+================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Inter', sans-serif;
-  background-color: #0b0b0d;
-  color: #ffffff;
+html,
+body {
+  width: 100%;
   height: 100%;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
-/* =========================
-   HEADER (GLASS)
-   ========================= */
-
+/* ==================================================
+   HEADER – GLASSMORPHISM
+================================================== */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  backdrop-filter: blur(12px);
-  background: rgba(10, 10, 12, 0.55);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  height: 72px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
 }
 
 .header-container {
   max-width: 1200px;
+  height: 100%;
   margin: auto;
-  padding: 16px 24px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 0 24px;
 }
 
 .logo img {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-}
-
-.nav a {
-  margin-left: 32px;
-  text-decoration: none;
-  color: #cfcfd6;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
-
-.nav a:hover {
-  color: #ffffff;
-}
-
-/* =========================
-   HERO
-   ========================= */
-
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 24px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
+.nav a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
   font-weight: 500;
-  margin-bottom: 16px;
+  transition: color 0.25s ease;
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  color: #cfcfd6;
+.nav a:hover {
+  color: var(--accent);
 }
-/* =========================
-   ENERGY BAR – CENTER OUT
-   ========================= */
 
+/* ==================================================
+   ENERGY BAR – CENTRO PARA FORA (DODGE DEMON 😈)
+================================================== */
 .energy-bar {
   position: fixed;
-  top: 52px; /* altura real do header */
+  top: 72px;
   left: 50%;
   transform: translateX(-50%);
-
   width: 100%;
   height: 2px;
-  overflow: hidden;
   z-index: 999;
+  overflow: hidden;
 }
 
-/* Pulso de energia */
 .energy-bar::before {
   content: "";
   position: absolute;
@@ -306,7 +107,6 @@ html, body {
 
   width: 0%;
   height: 100%;
-
   transform: translateX(-50%);
 
   background: linear-gradient(
@@ -318,12 +118,11 @@ html, body {
 
   box-shadow:
     0 0 8px rgba(0, 140, 255, 0.8),
-    0 0 16px rgba(0, 140, 255, 0.5);
+    0 0 18px rgba(0, 140, 255, 0.6);
 
   animation: demonPulse 2.8s ease-out infinite;
 }
 
-/* Animação: do centro para fora */
 @keyframes demonPulse {
   0% {
     width: 0%;
@@ -343,4 +142,92 @@ html, body {
     width: 100%;
     opacity: 0;
   }
+}
+
+/* ==================================================
+   HERO – VÍDEO FULLSCREEN (SEM SUMIR)
+================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Vídeo */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(11, 13, 16, 0.45),
+    rgba(11, 13, 16, 0.85)
+  );
+  z-index: 1;
+}
+
+/* Conteúdo */
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  margin-top: 24px;
+  max-width: 620px;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ==================================================
+   SCROLLBAR – CLEAN
+================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }

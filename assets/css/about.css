@@ -1,0 +1,101 @@
+/* =========================
+   ABOUT - BASE
+========================= */
+
+.about {
+  padding-top: 140px; /* respeita header fixo */
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero {
+  max-width: 720px;
+  margin-bottom: 96px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.about-hero p {
+  margin-top: 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+/* TEXTO */
+
+.about-text h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.about-card {
+  padding: 24px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+}
+
+.about-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.about-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
