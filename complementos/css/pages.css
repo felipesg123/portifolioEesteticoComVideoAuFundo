@@ -1,0 +1,72 @@
+/* =========================
+   BASE DAS PÁGINAS INTERNAS
+========================= */
+.page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 140px 24px 80px;
+}
+
+/* =========================
+   HERO DO CONTATO
+========================= */
+.contact-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.contact-hero p {
+    margin-top: 16px;
+    max-width: 520px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* =========================
+   OPÇÕES DE CONTATO
+========================= */
+.contact-options {
+    margin-top: 64px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* Card de contato */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 28px;
+    border-radius: 16px;
+
+    text-decoration: none;
+    color: var(--text-main);
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+/* Texto pequeno */
+.contact-card span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Texto principal */
+.contact-card strong {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Hover premium */
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
