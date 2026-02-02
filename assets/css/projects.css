@@ -1,0 +1,159 @@
+/* =========================
+   BASE
+========================= */
+
+.projects {
+  padding-top: 140px;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.projects-hero {
+  max-width: 720px;
+  margin-bottom: 64px;
+}
+
+.projects-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.projects-hero p {
+  margin-top: 20px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.projects-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.tab.active {
+  color: var(--text-main);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.projects-grid {
+  position: relative;
+}
+
+.projects-group {
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  animation: fade 0.4s ease;
+}
+
+.projects-group.active {
+  display: grid;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.project-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px rgba(99,91,255,0.2);
+}
+
+.project-thumb {
+  height: 140px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2a2a35, #15151d);
+  margin-bottom: 16px;
+}
+
+.project-thumb.figma {
+  background: linear-gradient(135deg, #ff5cf0, #635bff);
+}
+
+.project-card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.project-link:hover {
+  opacity: 1;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
